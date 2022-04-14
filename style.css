@@ -4,16 +4,48 @@
     box-sizing: border-box;
 }
 
+html {
+    text-rendering: optimizeLegibility;
+    image-rendering: optimizeQuality;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+}
+
 :root {
     --black: #131313;
+    --medium-gray: #141414;
     --white: #fff;
     --orange: #ff8177;
     --red: #ff0844;
     --yellow: #ffb199;
     --blue: #4837ff;
+    --purple: #b721ff;
+    --cyan: #21d4fd;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style-type: none;
 }
 
 .navbar {
+    font-family: "Mukta", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,18 +78,17 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    text-decoration: none;
     font-size: 2rem;
 }
 
 .fa-gem {
-    margin-right: 0.5rem;
+    margin-right: 1rem;
+    color: var(--red);
 }
 
 .navbar-menu {
     display: flex;
     align-items: center;
-    list-style: none;
     text-align: center;
 }
 
@@ -69,7 +100,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
     padding: 0 1rem;
     height: 100%;
     color: var(--white);
@@ -81,10 +111,10 @@
 }
 
 .navbar-btn {
+    font-family: "Mukta", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     padding: 10px 20px;
     width: 100%;
     border: none;
@@ -98,6 +128,82 @@
     background-color: var(--blue);
     transition: all 0.3s ease-in-out;
     filter: brightness(0.9);
+}
+
+.main {
+    background-color: var(--medium-gray);
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: var(--medium-gray);
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.main-content h1 {
+    font-size: 4rem;
+    background-color: var(--orange);
+    background-image: linear-gradient(to top, var(--red) 0%, var(--yellow) 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.main-content h2 {
+    font-size: 4rem;
+    background-color: var(--orange);
+    background-image: linear-gradient(to top, var(--purple) 0%, var(--cyan) 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.main-content p {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.main-btn {
+    font-size: 1rem;
+    background-image: linear-gradient(to top, var(--red) 0%, var(--yellow) 100%);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    color: var(--white);
+    margin-top: 2rem;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    font-weight: 700px;
+}
+
+.main-btn:hover {
+    background-image: linear-gradient(to top, var(--purple) 0%, var(--cyan) 100%);
+    transition: all 0.5s ease-in-out;
+    filter: brightness(0.9);
+}
+
+.hero-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#main-img {
+    height: 77%;
+    width: 77%;
 }
 
 @media screen and (max-width: 960px) {
@@ -183,5 +289,57 @@
 
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        height: 90vh;
+        margin: 0 auto;
+    }
+
+    .main-content {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .main-content h1 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .main-content h2 {
+        font-size: 3rem;
+    }
+
+    .main-content p {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-content h1 {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+    .main-content h2 {
+        font-size: 2rem;
+    }
+
+    .main-content p {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .main-btn {
+        padding: 12px 36px;
+        margin: 2.5rem 0;
     }
 }
