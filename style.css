@@ -6,7 +6,7 @@
 
 html {
     text-rendering: optimizeLegibility;
-    image-rendering: optimizeQuality;
+    image-rendering: optimizeSpeed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
@@ -29,6 +29,7 @@ html {
 body {
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
+    background-color: var(--medium-gray);
 }
 
 button {
@@ -206,6 +207,96 @@ li {
     width: 77%;
 }
 
+.services {
+    background-color: var(--medium-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.services h1 {
+    background-color: var(--orange);
+    background-image: linear-gradient(
+        to right,
+        #ff8177 0%,
+        #ff867a 0%,
+        #ff8c7f 21%,
+        #f99185 52%,
+        #cf556c 78%,
+        #b12a5b 100%
+    );
+    background-size: 100%;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: wrap;
+}
+
+.services-card1 {
+    position: relative;
+    color: var(--white);
+    margin: 1rem;
+    width: 525px;
+    height: 525px;
+    border: none;
+    border-radius: 4px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(17, 17, 17, 0.6) 100%), url('./assets/pic3.jpg');
+    background-size: cover;
+}
+
+.services-card2 {
+    position: relative;
+    color: var(--white);
+    margin: 1rem;
+    width: 525px;
+    height: 525px;
+    border: none;
+    border-radius: 4px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(17, 17, 17, 0.6) 100%), url('./assets/pic4.jpg');
+    background-size: cover;
+}
+
+.services-card1 h2, 
+.services-card2 h2 {
+    position: absolute;
+    top: 350px;
+    left: 30px;
+}
+
+.services-card1 p, 
+.services-card2 p {
+    position: absolute;
+    top: 400px;
+    left: 30px;
+}
+.card-btn {
+    position: absolute;
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: var(--red);
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+}
+
+.card-btn:hover {
+    filter: brightness(0.9);
+}
+
+
+
 @media screen and (max-width: 960px) {
     .navbar-container {
         display: flex;
@@ -343,3 +434,42 @@ li {
         margin: 2.5rem 0;
     }
 }
+
+@media screen and (max-width:960px) {
+    .services {
+        height: 1600px;
+    }
+
+    .services h1 {
+        font-size: 2rem;
+        margin-top: 12rem;
+
+    }
+
+    .services-container {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+    }
+
+    .services-card1 {
+        margin-bottom: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services {
+        height: 1400px;
+    }
+
+    .services h1 {
+        font-size: 1.2rem;
+    }
+
+    .services-card1,
+    .services-card2 {
+        width: 300px;
+    }
+}
+
